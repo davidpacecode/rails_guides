@@ -23,6 +23,13 @@
     <%= javascript_importmap_tags %>
   </head>
 
+  <nav>
+    <%= link_to "Home", root_path %>
+    <%= button_to "Log out", session_path, method: :delete if authenticated? %>
+    <%= link_to "Login", new_session_path unless authenticated? %>
+  </nav>
+    
+
   <body>
     <%= yield %>
   </body>
